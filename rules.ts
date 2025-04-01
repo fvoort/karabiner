@@ -55,7 +55,7 @@ const rules: KarabinerRules[] = [
       t: app("Ghostty"),
     },
 
-    // w = "Window" via rectangle.app
+    // w = "Window"
     w: {
       left_arrow: open(
         "-g raycast://extensions/raycast/window-management/left-half"
@@ -86,6 +86,11 @@ const rules: KarabinerRules[] = [
       4: open(
         "-g raycast://extensions/raycast/window-management/bottom-right-quarter"
       ),
+    },
+
+    // s "System"
+    s: {
+      l: open("raycast://extensions/raycast/system/lock-screen"),
     },
 
     // r = "Raycast"
