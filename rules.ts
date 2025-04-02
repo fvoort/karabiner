@@ -91,6 +91,7 @@ const rules: KarabinerRules[] = [
     // s "System"
     s: {
       l: open("raycast://extensions/raycast/system/lock-screen"),
+      d: open("-g raycast://extensions/raycast/system/show-desktop"),
     },
 
     // r = "Raycast"
