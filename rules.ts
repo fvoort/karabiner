@@ -45,7 +45,7 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       b: app("Firefox"),
-      n: app("Notes"),
+      n: app("Obsidian"),
       s: app("Spotify"),
       w: app("WhatsApp"),
       f: app("Figma"),
