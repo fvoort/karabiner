@@ -105,6 +105,7 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
       t: open("raycast://extensions/mooxl/deepcast/index"),
+      m: open("raycast://extensions/raycast/system/open-camera"),
     },
   }),
 ];
