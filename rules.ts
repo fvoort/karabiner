@@ -44,16 +44,19 @@ const rules: KarabinerRules[] = [
     spacebar: app("Raycast"),
     // o = "Open" applications
     o: {
-      b: app("Firefox"),
-      c: app("BusyCal"),
-      n: app("Obsidian"),
-      s: app("Spotify"),
-      w: app("WhatsApp"),
-      f: app("Figma"),
-      p: app("Affinity Photo 2"),
-      d: app("Affinity Designer 2"),
-      v: app("Visual Studio Code"),
-      t: app("Ghostty"),
+      f: app("Finder"), // 'F'inder
+      b: app("Safari"), // 'B'rowser
+      m: app("Mail"), // 'M'ail
+      c: app("Calendar"), // 'C'alendar
+      n: app("Notes"), // 'N'otes
+      r: app("Reminders"), // 'R'eminders
+      s: app("Music"), // 'S'potify
+      w: app("Microsoft Word"), // 'W'ord
+      e: app("Microsoft Excel"), // 'E'xcel
+      p: app("Affinity Photo 2"), // 'P'hoto
+      d: app("Affinity Designer 2"), // 'D'esigner
+      v: app("Visual Studio Code"), // 'V'SCode
+      t: app("Ghostty"), // 'T'erminal
     },
 
     // w = "Window"
