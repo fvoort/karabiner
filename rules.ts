@@ -50,6 +50,7 @@ const rules: KarabinerRules[] = [
       c: app("Calendar"), // 'C'alendar
       n: app("Notes"), // 'N'otes
       s: app("Spotify"), // 'S'potify
+      v: app("Visual Studio Code"), // 'V'isual Studio Code
       w: app("WhatsApp"), // 'W'ord
       t: app("Ghostty"), // 'T'erminal
     },
