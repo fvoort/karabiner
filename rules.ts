@@ -49,7 +49,7 @@ const rules: KarabinerRules[] = [
       m: app("Mail"), // 'M'ail
       c: app("Calendar"), // 'C'alendar
       n: app("Notes"), // 'N'otes
-      s: app("Music"), // 'S'potify
+      s: app("Spotify"), // 'S'potify
       w: app("WhatsApp"), // 'W'ord
       t: app("Ghostty"), // 'T'erminal
     },
