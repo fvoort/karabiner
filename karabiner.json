@@ -222,12 +222,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Music.app'",
+                                "description": "Open -a 'Spotify.app'",
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Music.app'" }],
+                                "to": [{ "shell_command": "open -a 'Spotify.app'" }],
                                 "type": "basic"
                             },
                             {
