@@ -45,13 +45,13 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       f: app("Finder"), // 'F'inder
-      b: app("Google Chrome"), // 'B'rowser
+      b: app("Firefox"), // 'B'rowser
       m: app("Mail"), // 'M'ail
       c: app("Calendar"), // 'C'alendar
       n: app("Notes"), // 'N'otes
       s: app("Spotify"), // 'S'potify
       v: app("Visual Studio Code"), // 'V'isual Studio Code
-      w: app("WhatsApp"), // 'W'ord
+      w: app("WhatsApp"), // 'W'hatsApp
       t: app("Ghostty"), // 'T'erminal
     },
 
