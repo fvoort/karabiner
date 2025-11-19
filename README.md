@@ -7,7 +7,7 @@ This is my personal fork of [Max Stoiber’s Karabiner Elements configuration](h
 1. Install & start [Karabiner Elements](https://karabiner-elements.pqrs.org/)
 2. Delete the default `~/.config/karabiner` folder
 3. Clone this repository
-4. Create a symlink with `ln -s ~/github/fvoort/karabiner ~/.config` (where `~/github/fvoort/karabiner` is your local path to where you cloned the repository)
+4. Create a symlink with `ln -s ~/Git/karabiner ~/.config` (where `~/Git/karabiner` is your local path to where you cloned the repository)
 5. [Restart karabiner_console_user_server](https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/) with `` launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server ``
 
 ## Development
