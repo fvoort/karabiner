@@ -48,6 +48,7 @@ const rules: KarabinerRules[] = [
       b: app("Firefox"), // 'B'rowser
       m: app("Mail"), // 'M'ail
       c: app("Calendar"), // 'C'alendar
+      i: app("Notion"), // Not'i'on
       n: app("Notes"), // 'N'otes
       s: app("Spotify"), // 'S'potify
       v: app("Visual Studio Code"), // 'V'isual Studio Code
