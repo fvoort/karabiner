@@ -93,6 +93,66 @@ const rules: KarabinerRules[] = [
     s: {
       l: open("raycast://extensions/raycast/system/lock-screen"),
       d: open("-g raycast://extensions/raycast/system/show-desktop"),
+      up_arrow: {
+        to: [
+          {
+            key_code: "volume_increment",
+          },
+        ],
+      },
+      down_arrow: {
+        to: [
+          {
+            key_code: "volume_decrement",
+          },
+        ],
+      },
+      return_or_enter: {
+        to: [
+          {
+            key_code: "mute",
+          },
+        ],
+      },
+      right_arrow: {
+        to: [
+          {
+            key_code: "display_brightness_increment",
+          },
+        ],
+      },
+      left_arrow: {
+        to: [
+          {
+            key_code: "display_brightness_decrement",
+          },
+        ],
+      },
+    },
+
+    // e "Media"
+    e: {
+      return_or_enter: {
+        to: [
+          {
+            consumer_key_code: "play_or_pause",
+          },
+        ],
+      },
+      right_arrow: {
+        to: [
+          {
+            consumer_key_code: "scan_next_track",
+          },
+        ],
+      },
+      left_arrow: {
+        to: [
+          {
+            consumer_key_code: "scan_previous_track",
+          },
+        ],
+      },
     },
 
     // r = "Raycast"
