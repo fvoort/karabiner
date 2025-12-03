@@ -47,6 +47,7 @@ const rules: KarabinerRules[] = [
       f: app("Finder"), // 'F'inder
       b: app("Firefox"), // 'B'rowser
       m: app("Mail"), // 'M'ail
+      d: app("Discord"), // 'C'alendar
       c: app("Calendar"), // 'C'alendar
       i: app("Notion"), // Not'i'on
       n: app("Notes"), // 'N'otes
@@ -132,24 +133,46 @@ const rules: KarabinerRules[] = [
 
     // e "Media"
     e: {
+      return_or_enter: open(
+        "raycast://extensions/thomas/spotify-controls/playPause"
+      ),
+      up_arrow: open(
+        "raycast://extensions/thomas/spotify-controls/increaseVolume?arguments=%7B%22step%22%3A%22%22%7D"
+      ),
+      down_arrow: open(
+        "raycast://extensions/thomas/spotify-controls/decreaseVolume?arguments=%7B%22step%22%3A%22%22%7D"
+      ),
+      right_arrow: open(
+        "raycast://extensions/thomas/spotify-controls/nextTrack"
+      ),
+      left_arrow: open(
+        "raycast://extensions/thomas/spotify-controls/previousTrack"
+      ),
+    },
+
+    // d = "Discord"
+    d: {
+      m: {
+        to: [
+          {
+            modifiers: ["command", "option", "shift"],
+            key_code: "m",
+          },
+        ],
+      },
       return_or_enter: {
         to: [
           {
-            consumer_key_code: "play_or_pause",
+            modifiers: ["command", "option", "shift"],
+            key_code: "d",
           },
         ],
       },
-      right_arrow: {
+      delete_or_backspace: {
         to: [
           {
-            consumer_key_code: "scan_next_track",
-          },
-        ],
-      },
-      left_arrow: {
-        to: [
-          {
-            consumer_key_code: "scan_previous_track",
+            modifiers: ["command", "option", "shift"],
+            key_code: "l",
           },
         ],
       },

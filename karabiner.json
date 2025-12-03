@@ -70,6 +70,11 @@
                                         "value": 0
                                     },
                                     {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
                                         "name": "hyper_sublayer_r",
                                         "type": "variable_if",
                                         "value": 0
@@ -107,6 +112,11 @@
                                     },
                                     {
                                         "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_d",
                                         "type": "variable_if",
                                         "value": 0
                                     },
@@ -190,6 +200,22 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Mail.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Discord.app'",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Discord.app'" }],
                                 "type": "basic"
                             },
                             {
@@ -328,6 +354,11 @@
                                     },
                                     {
                                         "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_d",
                                         "type": "variable_if",
                                         "value": 0
                                     },
@@ -569,6 +600,11 @@
                                         "value": 0
                                     },
                                     {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
                                         "name": "hyper_sublayer_r",
                                         "type": "variable_if",
                                         "value": 0
@@ -737,6 +773,11 @@
                                         "value": 0
                                     },
                                     {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
                                         "name": "hyper_sublayer_r",
                                         "type": "variable_if",
                                         "value": 0
@@ -778,11 +819,12 @@
                                         "value": 1
                                     }
                                 ],
+                                "description": "Open raycast://extensions/thomas/spotify-controls/playPause",
                                 "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "to": [{ "shell_command": "open raycast://extensions/thomas/spotify-controls/playPause" }],
                                 "type": "basic"
                             },
                             {
@@ -793,11 +835,44 @@
                                         "value": 1
                                     }
                                 ],
+                                "description": "Open raycast://extensions/thomas/spotify-controls/increaseVolume?arguments=%7B%22step%22%3A%22%22%7D",
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/thomas/spotify-controls/increaseVolume?arguments=%7B%22step%22%3A%22%22%7D" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open raycast://extensions/thomas/spotify-controls/decreaseVolume?arguments=%7B%22step%22%3A%22%22%7D",
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/thomas/spotify-controls/decreaseVolume?arguments=%7B%22step%22%3A%22%22%7D" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open raycast://extensions/thomas/spotify-controls/nextTrack",
                                 "from": {
                                     "key_code": "right_arrow",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "consumer_key_code": "scan_next_track" }],
+                                "to": [{ "shell_command": "open raycast://extensions/thomas/spotify-controls/nextTrack" }],
                                 "type": "basic"
                             },
                             {
@@ -808,11 +883,138 @@
                                         "value": 1
                                     }
                                 ],
+                                "description": "Open raycast://extensions/thomas/spotify-controls/previousTrack",
                                 "from": {
                                     "key_code": "left_arrow",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "consumer_key_code": "scan_previous_track" }],
+                                "to": [{ "shell_command": "open raycast://extensions/thomas/spotify-controls/previousTrack" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper Key sublayer \"d\"",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_spacebar",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_s",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_r",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Toggle Hyper sublayer d",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_sublayer_d",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_sublayer_d",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": ["command", "option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": ["command", "option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_d",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["command", "option", "shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -844,6 +1046,11 @@
                                     },
                                     {
                                         "name": "hyper_sublayer_e",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "hyper_sublayer_d",
                                         "type": "variable_if",
                                         "value": 0
                                     },
