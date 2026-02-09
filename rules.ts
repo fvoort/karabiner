@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Caps Lock -> Hyper Key",
+        description: "Left Control -> Hyper Key",
         from: {
-          key_code: "caps_lock",
+          key_code: "left_control",
           modifiers: {
             optional: ["any"],
           },
@@ -33,7 +33,59 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "caps_lock",
+            key_code: "left_control",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        description: "Right Option -> Hyper Key",
+        from: {
+          key_code: "right_option",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 1,
+            },
+          },
+        ],
+        to_after_key_up: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 0,
+            },
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: "right_option",
+          },
+        ],
+        type: "basic",
+      },
+    ],
+  },
+  // Remap Caps Lock to Control
+  {
+    description: "Caps Lock Control",
+    manipulators: [
+      {
+        description: "Caps Lock -> Control",
+        from: {
+          key_code: "caps_lock",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            key_code: "left_control",
           },
         ],
         type: "basic",
@@ -42,6 +94,44 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
     spacebar: app("Raycast"),
+    h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
+
+    up_arrow: {
+      to: [
+        {
+          key_code: "volume_increment",
+        },
+      ],
+    },
+    down_arrow: {
+      to: [
+        {
+          key_code: "volume_decrement",
+        },
+      ],
+    },
+    return_or_enter: {
+      to: [
+        {
+          key_code: "mute",
+        },
+      ],
+    },
+    right_arrow: {
+      to: [
+        {
+          key_code: "display_brightness_increment",
+        },
+      ],
+    },
+    left_arrow: {
+      to: [
+        {
+          key_code: "display_brightness_decrement",
+        },
+      ],
+    },
+
     // o = "Open" applications
     o: {
       f: app("Finder"), // 'F'inder
@@ -94,41 +184,6 @@ const rules: KarabinerRules[] = [
     s: {
       l: open("raycast://extensions/raycast/system/lock-screen"),
       d: open("-g raycast://extensions/raycast/system/show-desktop"),
-      up_arrow: {
-        to: [
-          {
-            key_code: "volume_increment",
-          },
-        ],
-      },
-      down_arrow: {
-        to: [
-          {
-            key_code: "volume_decrement",
-          },
-        ],
-      },
-      return_or_enter: {
-        to: [
-          {
-            key_code: "mute",
-          },
-        ],
-      },
-      right_arrow: {
-        to: [
-          {
-            key_code: "display_brightness_increment",
-          },
-        ],
-      },
-      left_arrow: {
-        to: [
-          {
-            key_code: "display_brightness_decrement",
-          },
-        ],
-      },
     },
 
     // e "Media"
@@ -163,9 +218,6 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      h: open(
-        "raycast://extensions/raycast/clipboard-history/clipboard-history"
-      ),
       t: open("raycast://extensions/mooxl/deepcast/index"),
       m: open("raycast://extensions/raycast/system/open-camera"),
     },
