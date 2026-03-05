@@ -8,75 +8,7 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Left Control -> Hyper Key",
-        from: {
-          key_code: "left_control",
-          modifiers: {
-            optional: ["any"],
-          },
-        },
-        to: [
-          {
-            set_variable: {
-              name: "hyper",
-              value: 1,
-            },
-          },
-        ],
-        to_after_key_up: [
-          {
-            set_variable: {
-              name: "hyper",
-              value: 0,
-            },
-          },
-        ],
-        to_if_alone: [
-          {
-            key_code: "left_control",
-          },
-        ],
-        type: "basic",
-      },
-      {
-        description: "Right Option -> Hyper Key",
-        from: {
-          key_code: "right_option",
-          modifiers: {
-            optional: ["any"],
-          },
-        },
-        to: [
-          {
-            set_variable: {
-              name: "hyper",
-              value: 1,
-            },
-          },
-        ],
-        to_after_key_up: [
-          {
-            set_variable: {
-              name: "hyper",
-              value: 0,
-            },
-          },
-        ],
-        to_if_alone: [
-          {
-            key_code: "right_option",
-          },
-        ],
-        type: "basic",
-      },
-    ],
-  },
-  // Remap Caps Lock to Control
-  {
-    description: "Caps Lock Control",
-    manipulators: [
-      {
-        description: "Caps Lock -> Control",
+        description: "Caps Lock -> Hyper Key",
         from: {
           key_code: "caps_lock",
           modifiers: {
@@ -85,7 +17,23 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            key_code: "left_control",
+            set_variable: {
+              name: "hyper",
+              value: 1,
+            },
+          },
+        ],
+        to_after_key_up: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 0,
+            },
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: "caps_lock",
           },
         ],
         type: "basic",
@@ -96,130 +44,67 @@ const rules: KarabinerRules[] = [
     spacebar: app("Raycast"),
     h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
 
-    up_arrow: {
-      to: [
-        {
-          key_code: "volume_increment",
-        },
-      ],
-    },
-    down_arrow: {
-      to: [
-        {
-          key_code: "volume_decrement",
-        },
-      ],
-    },
-    return_or_enter: {
-      to: [
-        {
-          key_code: "mute",
-        },
-      ],
-    },
-    right_arrow: {
-      to: [
-        {
-          key_code: "display_brightness_increment",
-        },
-      ],
-    },
-    left_arrow: {
-      to: [
-        {
-          key_code: "display_brightness_decrement",
-        },
-      ],
-    },
+    // Window management
+    left_arrow: open(
+      "-g raycast://extensions/raycast/window-management/left-half"
+    ),
+    up_arrow: open(
+      "-g raycast://extensions/raycast/window-management/top-half"
+    ),
+    right_arrow: open(
+      "-g raycast://extensions/raycast/window-management/right-half"
+    ),
+    down_arrow: open(
+      "-g raycast://extensions/raycast/window-management/bottom-half"
+    ),
+    return_or_enter: open(
+      "-g raycast://extensions/raycast/window-management/maximize"
+    ),
+    c: open("-g raycast://extensions/raycast/window-management/center"),
+    z: open("-g raycast://extensions/raycast/window-management/restore"),
+    1: open(
+      "-g raycast://extensions/raycast/window-management/top-left-quarter"
+    ),
+    2: open(
+      "-g raycast://extensions/raycast/window-management/top-right-quarter"
+    ),
+    3: open(
+      "-g raycast://extensions/raycast/window-management/bottom-left-quarter"
+    ),
+    4: open(
+      "-g raycast://extensions/raycast/window-management/bottom-right-quarter"
+    ),
 
     // o = "Open" applications
     o: {
       f: app("Finder"), // 'F'inder
-      b: app("Firefox"), // 'B'rowser
+      b: app("Microsoft Edge"), // 'B'rowser
       m: app("Mail"), // 'M'ail
+      w: app("WhatsApp"), // 'W'hatsApp
       c: app("Calendar"), // 'C'alendar
-      i: app("Notion"), // Not'i'on
+      r: app("Reminders"), // 'R'eminders
       n: app("Notes"), // 'N'otes
       s: app("Spotify"), // 'S'potify
       v: app("Visual Studio Code"), // 'V'isual Studio Code
-      w: app("WhatsApp"), // 'W'hatsApp
-      d: app("Discord"), // 'D'iscord
       t: app("Ghostty"), // 'T'erminal
-    },
-
-    // w = "Window"
-    w: {
-      left_arrow: open(
-        "-g raycast://extensions/raycast/window-management/left-half"
-      ),
-      up_arrow: open(
-        "-g raycast://extensions/raycast/window-management/top-half"
-      ),
-      right_arrow: open(
-        "-g raycast://extensions/raycast/window-management/right-half"
-      ),
-      down_arrow: open(
-        "-g raycast://extensions/raycast/window-management/bottom-half"
-      ),
-      return_or_enter: open(
-        "-g raycast://extensions/raycast/window-management/maximize"
-      ),
-      c: open("-g raycast://extensions/raycast/window-management/center"),
-      z: open("-g raycast://extensions/raycast/window-management/restore"),
-      1: open(
-        "-g raycast://extensions/raycast/window-management/top-left-quarter"
-      ),
-      2: open(
-        "-g raycast://extensions/raycast/window-management/top-right-quarter"
-      ),
-      3: open(
-        "-g raycast://extensions/raycast/window-management/bottom-left-quarter"
-      ),
-      4: open(
-        "-g raycast://extensions/raycast/window-management/bottom-right-quarter"
-      ),
+      a: app("Claude"), // 'A'I
     },
 
     // s "System"
     s: {
-      l: open("raycast://extensions/raycast/system/lock-screen"),
-      d: open("-g raycast://extensions/raycast/system/show-desktop"),
-    },
-
-    // e "Media"
-    e: {
-      return_or_enter: {
-        to: [
-          {
-            consumer_key_code: "play_or_pause",
-          },
-        ],
-      },
-      right_arrow: {
-        to: [
-          {
-            consumer_key_code: "scan_next_track",
-          },
-        ],
-      },
-      left_arrow: {
-        to: [
-          {
-            consumer_key_code: "scan_previous_track",
-          },
-        ],
-      },
+      l: open("raycast://extensions/raycast/system/lock-screen"), // 'L'ock
+      d: open("-g raycast://extensions/raycast/system/show-desktop"), // 'D'esktop
     },
 
     // r = "Raycast"
     r: {
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
+      c: open("raycast://extensions/thomas/color-picker/pick-color"), // 'C'olor
       e: open(
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      ),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      t: open("raycast://extensions/mooxl/deepcast/index"),
-      m: open("raycast://extensions/raycast/system/open-camera"),
+      ), // 'E'moji
+      p: open("raycast://extensions/raycast/raycast/confetti"), // 'P'arty
+      t: open("raycast://extensions/mooxl/deepcast/index"), // 'T'ranslate
+      m: open("raycast://extensions/raycast/system/open-camera"), // 'M'irror
     },
   }),
 ];
