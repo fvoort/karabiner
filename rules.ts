@@ -81,9 +81,9 @@ const rules: KarabinerRules[] = [
       b: app("Microsoft Edge"), // 'B'rowser
       m: app("Mail"), // 'M'ail
       w: app("WhatsApp"), // 'W'hatsApp
-      c: app("Calendar"), // 'C'alendar
+      c: app("Notion Calendar"), // 'C'alendar
+      n: app("Notion"), // 'N'otion
       r: app("Reminders"), // 'R'eminders
-      n: app("Notes"), // 'N'otes
       s: app("Spotify"), // 'S'potify
       v: app("Visual Studio Code"), // 'V'isual Studio Code
       t: app("Ghostty"), // 'T'erminal
@@ -92,7 +92,7 @@ const rules: KarabinerRules[] = [
 
     // s "System"
     s: {
-      l: open("raycast://extensions/raycast/system/lock-screen"), // 'L'ock
+      l: open("raycast://extensions/raycast/system/lock-screen"), // 'L'ockw
       d: open("-g raycast://extensions/raycast/system/show-desktop"), // 'D'esktop
     },
 
