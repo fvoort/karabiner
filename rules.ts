@@ -81,7 +81,7 @@ const rules: KarabinerRules[] = [
       b: app("Microsoft Edge"), // 'B'rowser
       m: app("Mail"), // 'M'ail
       w: app("WhatsApp"), // 'W'hatsApp
-      c: app("Notion Calendar"), // 'C'alendar
+      c: app("BusyCal"), // 'C'alendar
       n: app("Notion"), // 'N'otion
       k: app("Notes"),
       s: app("Spotify"), // 'S'potify
