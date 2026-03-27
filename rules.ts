@@ -83,11 +83,10 @@ const rules: KarabinerRules[] = [
       w: app("WhatsApp"), // 'W'hatsApp
       c: app("Notion Calendar"), // 'C'alendar
       n: app("Notion"), // 'N'otion
-      r: app("Reminders"), // 'R'eminders
+      k: app("Notes"),
       s: app("Spotify"), // 'S'potify
       v: app("Visual Studio Code"), // 'V'isual Studio Code
       t: app("Ghostty"), // 'T'erminal
-      a: app("Claude"), // 'A'I
     },
 
     // s "System"
